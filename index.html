@@ -31,53 +31,31 @@
     <header>
         <nav class="space-y-8 fixed z-20 w-full bg-white  p-0 top-0">
             
-                <div class="navbar bg-gray-100 px-48 py-4">
-                    <div class="navbar-start">
-                      <div class="dropdown">
-                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="h-5 w-5"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              d="M4 6h16M4 12h8m-8 6h16" />
-                          </svg>
-                        </div>
-                        <ul
-                          tabindex="0"
-                          class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                          <li><a>Item 1</a></li>
-                          <li>
-                            <a>Parent</a>
-                            <ul class="p-2">
-                              <li><a>Submenu 1</a></li>
-                              <li><a>Submenu 2</a></li>
-                            </ul>
-                          </li>
-                          <li><a>Item 3</a></li>
-                        </ul>
-                      </div>
-                      <a class="" href="./blog.html"><button type="button" class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Blog</button></a>
-                    </div>
-                    <div class="navbar-center hidden lg:flex gap-2">
-                      <img src="./assets/logo.png" alt="">
-                      <h1 class="text-2xl font-bold">Donate Us Support Us</h1>
-                    </div>
-                    <div class="navbar-end gap-2">
-                      <img src="./assets/coin.png" alt="">
-                      <p class="" id="balance">5500</p>
-                      <p>BDT</p>
-                    </div>
-                  </div>
+               <div class=" md:flex lg:flex md:justify-around md:items-center mx-auto w-full py-4 bg-gray-100">
+                
+               <div class="flex  gap-2 justify-center items-center">
+                <a class="" href="./blog.html"><button type="button" id="blog_btn" class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Blog</button></a>
+               </div>
+
+                <div class=" flex  gap-2 justify-center items-center">
+                  <img class="w-10" src="./assets/logo.png" alt="">
+                  <h1 class="text-xl font-bold">Donate Us Support Us</h1>
+                </div>
+                
+                <div class="flex gap-2 justify-center items-center">
+                  
+                  <img src="./assets/coin.png" alt="">
+                  <p class="" id="balance">5500</p>
+                  <p>BDT</p>
+                  
+                </div>
+               </div>
+
+                  
     
-                  <div class="flex justify-center items-center bg-white pb-8">
+                  <div class="flex justify-center items-center bg-white pb-4">
                
-                    <button type="button" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium rounded-lg group bg-gradient-to-br from-green-400 to-blue-600  text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
+                    <button id="donate_btn_2" type="button" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium rounded-lg group bg-gradient-to-br from-green-400 to-blue-600  text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
                         <span id="donate_btn" class="relative px-5 py-2.5 transition-all ease-in duration-75  rounded-md group-hover:bg-opacity-0">
                        Donation
                         </span>
@@ -85,7 +63,7 @@
               
                     <div>
                    
-                        <button type="button" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
+                        <button type="button" id="history_btn_2" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium rounded-lg group bg-gradient-to-br from-green-400 to-blue-600  text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
                             <span id="history_btn" class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-white-900 text-black hover:text-white rounded-md group-hover:bg-opacity-0">
                             History
                             </span>
@@ -97,99 +75,107 @@
         </nav>
     </header>
     <main>
-        <!-- donate card section -->
-        <section class="md:px-48 mt-48 mb-12 flex-col justify-center items-center space-y-8">
+        <section class="md:px-48 mt-64 md:mt-48 mb-20 flex-col justify-center items-center space-y-8">
+
+          
+
           <!-- Open the modal using ID.showModal() method -->
-    <dialog id="my_modal_1" class="modal">
-      <div class="modal-box">
-       <div class="flex flex-col justify-center items-center space-y-2">
-        <h1 class="text-2xl font-bold">Congrats!</h1>
-        <img src="./assets/coin.png" alt="">
-        <p>You Have Donated for HumanKind</p>
-        <p class="font-bold">Successfully</p>
-       </div>
-        <div class="modal-action flex justify-center items-center">
-          <!-- if there is a button in form, it will close the modal -->
-          <form method="dialog ">
-          <div class="flex justify-center items-center">
-            <button class="btn items-center" id="modal_close">close confirmation</button>
+        <dialog id="my_modal_1" class="modal">
+          <div class="modal-box">
+          <div class="flex flex-col justify-center items-center space-y-2">
+            <h1 class="text-2xl font-bold">Congrats!</h1>
+            <img src="./assets/coin.png" alt="">
+            <p>You Have Donated for HumanKind</p>
+            <p class="font-bold">Successfully</p>
           </div>
-          </form>
+            <div class="modal-action flex justify-center items-center">
+              <!-- if there is a button in form, it will close the modal -->
+              <form method="dialog ">
+              <div class="flex justify-center items-center">
+                <button class="btn items-center" id="modal_close">close confirmation</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </dialog>
+
+
+        <!-- History section start -->
+        <div id="history_section" class=" flex-col space-y-4 hidden">
+        
+          </div>
         </div>
-      </div>
-    </dialog>
+        <!-- History Section end -->
 
 
-<!-- History section start -->
- <div id="history_section" class="flex flex-col space-y-4">
- 
-  </div>
- </div>
-<!-- History Section end -->
+<!-- donate card section start -->
 
-            <!-- card_1 start -->
-        <div class="card lg:card-side bg-base-100 shadow-xl grid lg:grid-cols-2 grid-cols-1   justify-center items-center">
-            <div class="col-span-1 px-6">
-              <img class="object-cover "
-                src="./assets/noakhali.png"
-                alt="Album" />
-            </div>
-            <div class="card-body col-span-1 space-y-2">
-              <button class="btn w-fit"><img src="./assets/coin.png" alt=""><span id="noakhali_balance">100</span>BDT</button>
-              <h1 class="text-xl font-bold">Donate for Flood at Noakhali, Bangladesh</h1>
-              <p> The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
 
-              <input type="text" id="noakhali_amount" placeholder="Write Donate Amount" class="input input-bordered w-full " />
-
-              <div class="card-actions">
-                <button type="button" class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 w-full" id="noakhali_donate_btn">Donate Now</button>
+       <div id="card_section" class="space-y-8 ">
+             <!-- card_1 start -->
+             <div class="card lg:card-side bg-base-100 shadow-xl grid lg:grid-cols-2 grid-cols-1   justify-center items-center">
+              <div class="col-span-1 px-6">
+                <img class="object-cover "
+                  src="./assets/noakhali.png"
+                  alt="Album" />
+              </div>
+              <div class="card-body col-span-1 space-y-2">
+                <button class="btn w-fit"><img src="./assets/coin.png" alt=""><span id="noakhali_balance">0</span>BDT</button>
+                <h1 class="text-xl font-bold">Donate for Flood at Noakhali, Bangladesh</h1>
+                <p> The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
+  
+                <input type="text" id="noakhali_amount" placeholder="Write Donate Amount" class="input input-bordered w-full " />
+  
+                <div class="card-actions">
+                  <button type="button" class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 w-full" id="noakhali_donate_btn">Donate Now</button>
+                </div>
               </div>
             </div>
-          </div>
-        <!-- card_2 End -->
-            <!-- card_1 start -->
-        <div class="card lg:card-side bg-base-100 shadow-xl grid lg:grid-cols-2 grid-cols-1   justify-center items-center">
-            <div class="col-span-1 px-6">
-              <img class="object-contain"
-                src="./assets/feni.png"
-                alt="Album" />
-            </div>
-            <div class="card-body col-span-1 space-y-2">
-              <button class="btn w-fit"><img src="./assets/coin.png" alt=""><span id="feni_balance">100</span>BDT</button>
-              <h1 class="text-xl font-bold">Donate for Flood Relief in Feni,Bangladesh</h1>
-              <p>The recent floods in Feni have devastated local communities, leading to severe disruption and loss. Your generous donation will help provide immediate aid, including food, clean water, and medical supplies, to those affected by this calamity. Together, we can offer crucial support and help rebuild lives in the aftermath of this disaster. Every contribution counts towards making a real difference. Please consider donating today to assist those in urgent need.</p>
-
-              <input type="text" id="feni_amount" placeholder="Write Donate Amount" class="input input-bordered w-full " />
-
-              <div class="card-actions">
-                <button type="button" class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 w-full" id="feni_donate_btn">Donate Now</button>
+          <!-- card_2 End -->
+              <!-- card_1 start -->
+          <div class="card lg:card-side bg-base-100 shadow-xl grid lg:grid-cols-2 grid-cols-1   justify-center items-center">
+              <div class="col-span-1 px-6">
+                <img class="object-contain"
+                  src="./assets/feni.png"
+                  alt="Album" />
+              </div>
+              <div class="card-body col-span-1 space-y-2">
+                <button class="btn w-fit"><img src="./assets/coin.png" alt=""><span id="feni_balance">0</span>BDT</button>
+                <h1 class="text-xl font-bold">Donate for Flood Relief in Feni,Bangladesh</h1>
+                <p>The recent floods in Feni have devastated local communities, leading to severe disruption and loss. Your generous donation will help provide immediate aid, including food, clean water, and medical supplies, to those affected by this calamity. Together, we can offer crucial support and help rebuild lives in the aftermath of this disaster. Every contribution counts towards making a real difference. Please consider donating today to assist those in urgent need.</p>
+  
+                <input type="text" id="feni_amount" placeholder="Write Donate Amount" class="input input-bordered w-full " />
+  
+                <div class="card-actions">
+                  <button type="button" class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 w-full" id="feni_donate_btn">Donate Now</button>
+                </div>
               </div>
             </div>
-          </div>
-        <!-- card_2 End -->
-            <!-- card_1 start -->
-        <div class="card lg:card-side bg-base-100 shadow-xl grid lg:grid-cols-2 grid-cols-1   justify-center items-center">
-            <div class="col-span-1 px-6">
-              <img class="object-cover "
-                src="./assets/quota-protest.png"
-                alt="Album" />
-            </div>
-            <div class="card-body col-span-1 space-y-2">
-              <button class="btn w-fit"><img src="./assets/coin.png" alt=""><span id="quota_balance">100</span>BDT</button>
-              <h1 class="text-xl font-bold">Aid for Injured in the Quota Movement</h1>
-              <p>The recent Quota movement has resulted in numerous injuries and significant hardship for many individuals. Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. By contributing, you help ensure that injured individuals receive the care and support they need during this challenging time. Every donation plays a vital role in alleviating their suffering and aiding in their recovery. Please consider making a donation to support these brave individuals in their time of need.</p>
-
-              <input type="text" id="quota_amount" placeholder="Write Donate Amount" class="input input-bordered w-full " />
-
-              <div class="card-actions">
-                <button type="button" class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 w-full" id="quota_donate_btn">Donate Now</button>
+          <!-- card_2 End -->
+              <!-- card_1 start -->
+          <div class="card lg:card-side bg-base-100 shadow-xl grid lg:grid-cols-2 grid-cols-1   justify-center items-center">
+              <div class="col-span-1 px-6">
+                <img class="object-cover "
+                  src="./assets/quota-protest.png"
+                  alt="Album" />
+              </div>
+              <div class="card-body col-span-1 space-y-2">
+                <button class="btn w-fit"><img src="./assets/coin.png" alt=""><span id="quota_balance">0</span>BDT</button>
+                <h1 class="text-xl font-bold">Aid for Injured in the Quota Movement</h1>
+                <p>The recent Quota movement has resulted in numerous injuries and significant hardship for many individuals. Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. By contributing, you help ensure that injured individuals receive the care and support they need during this challenging time. Every donation plays a vital role in alleviating their suffering and aiding in their recovery. Please consider making a donation to support these brave individuals in their time of need.</p>
+  
+                <input type="text" id="quota_amount" placeholder="Write Donate Amount" class="input input-bordered w-full " />
+  
+                <div class="card-actions">
+                  <button type="button" class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 w-full" id="quota_donate_btn">Donate Now</button>
+                </div>
               </div>
             </div>
-          </div>
-        <!-- card_2 End -->
+          <!-- card_2 End -->
+       </div>
         </section>
     </main>
-    <footer class="">
+    <footer id="footer" class="">
         <footer class="footer text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl  items-center p-4">
             <aside class="grid-flow-col items-center">
               <svg
