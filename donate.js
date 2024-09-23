@@ -75,13 +75,13 @@ function HistoryAdd(amount, text){
     const date = new Date();
     const formattedDate = date.toString();
     div.innerHTML = `
-    <div class="card bg-base-100 w-full  sm:shadow-xl transition-all duration-300 hover:bg-blue-200 hover:scale-105">
+    <div class="card bg-base-100 w-full  sm:shadow-xl sm:transition-all sm:duration-300 sm:hover:bg-blue-200 hover:scale-105">
         <div class="card-body">
         <p class="text-xl font-bold">${amount}${text}</p>
         <p class="text-sm  text-gray-500">Date : ${formattedDate}</p>
         
         </div>
-          
+           <div class="divider sm:hidden p-0 m-0"></div>
  
 
     </div>
