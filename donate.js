@@ -81,7 +81,7 @@ function HistoryAdd(amount, text){
         <p class="text-sm  text-gray-500">Date : ${formattedDate}</p>
         
         </div>
-           <div class="divider sm:hidden p-0 m-0"></div>
+          
  
 
     </div>
