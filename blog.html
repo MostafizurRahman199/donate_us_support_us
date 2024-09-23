@@ -75,6 +75,38 @@
         </nav>
     </header>
     <main>
+
+      <!-- Question answer start -->
+      <div id="faq_section" class="md:px-48 mt-64 md:mt-48 mb-20 flex-col justify-center items-center space-y-2 px-4">
+        <div class="collapse collapse-arrow text-white bg-gradient-to-br from-green-800 to-blue-800 hover:bg-gradient-to-bl ">
+           <input type="radio" name="my-accordion-2" checked="checked" />
+           <div class="collapse-title text-base md:text-xl font-medium">What is the Document Object Model (DOM)?</div>
+           <div class="collapse-content">
+             <p>The DOM is a programming interface for web documents that represents the structure of a webpage as a tree of objects. It allows scripts to dynamically access and modify the content, structure, and styles of a webpage.</p>
+           </div>
+         </div>
+         <div class="collapse collapse-arrow text-white bg-gradient-to-br from-green-800 to-blue-800 hover:bg-gradient-to-bl ">
+           <input type="radio" name="my-accordion-2" />
+           <div class="collapse-title  text-base md:text-xl font-medium">How do you select an element from the DOM?</div>
+           <div class="collapse-content">
+             <p>You can select an element from the DOM using methods like document.getElementById('id'), document.querySelector('.class'), or document.getElementsByTagName('tag').</p>
+           </div>
+         </div>
+         <div class="collapse collapse-arrow text-white bg-gradient-to-br from-green-800 to-blue-800  hover:bg-gradient-to-bl ">
+           <input type="radio" name="my-accordion-2" />
+           <div class="collapse-title  text-base md:text-xl font-medium">What is event delegation in the context of the DOM, and why is it useful?</div>
+           <div class="collapse-content">
+             <p>Event delegation is a technique where you attach a single event listener to a parent element to manage events for its child elements. It is useful because it simplifies event handling, reduces memory usage, and handles dynamically added elements.</p>
+           </div>
+         </div>
+         <div class="collapse collapse-arrow text-white bg-gradient-to-br from-green-800 to-blue-800  hover:bg-gradient-to-bl ">
+           <input type="radio" name="my-accordion-2" />
+           <div class="collapse-title  text-base md:text-xl font-medium">How do you manipulate an element's attributes and styles using the DOM?</div>
+           <div class="collapse-content">
+             <p>You can change an element's attributes with element.setAttribute('attribute', 'value') and modify its styles using element.style.property = 'value', such as element.style.color = 'red</p>
+           </div>
+         </div>
+      </div>
       <section class="px-4 md:px-48 mt-64  md:mt-48 mb-20 flex-col justify-center items-center space-y-8">
 
         
@@ -111,7 +143,7 @@
 <!-- donate card section start -->
 
 
-     <div id="card_section" class="space-y-8 ">
+     <div id="card_section" class="space-y-8 hidden">
            <!-- card_1 start -->
            <div class="card lg:card-side bg-base-100 shadow-xl grid lg:grid-cols-2 grid-cols-1   justify-center items-center">
             <div class="col-span-1 px-6">
