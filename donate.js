@@ -11,6 +11,7 @@ const donate_btn_2 = getById("donate_btn_2");
 const history_btn = getById("history_btn");
 const history_btn_2 = getById("history_btn_2");
 const blog_btn = getById("blog_btn");
+const home_btn = getById("home_btn");
 
 const my_modal_1 = getById("my_modal_1");
 const balance = getById("balance");
@@ -18,14 +19,11 @@ const modal_close = getById("modal_close");
 const history_section = getById("history_section");
 const card_section = getById("card_section");
 const footer = getById("footer");
+const faq_section = getById("faq_section");
 
 const quota_balance= getById("quota_balance");
 const feni_balance = getById("feni_balance");
 const noakhali_balance = getById("noakhali_balance");
-
-
-
-
 
 
 function getById(id){
@@ -33,9 +31,26 @@ function getById(id){
     return item;
 }
 
+
+
 function checkValidation(balance, amount){
-    if(!isNaN(parseFloat(amount))){
-        if(parseFloat(balance) > parseFloat(amount)){
+  
+    if(amount<0){
+        alert("Please provide positive amount");
+        return false;
+    }
+    if(amount === ""){
+        alert("Empty  field, please provide valid amount.");
+
+        return false;
+
+    }
+    if(parseFloat(amount) === 0){
+        alert("Please provide greater than Zero amount");
+        return false;
+    }
+    if(!isNaN(parseFloat(amount)) &&  !isNaN(amount)){
+        if(parseFloat(balance) >= parseFloat(amount)){
             return true;
         }else{
             alert("Insufficient balance");
@@ -43,7 +58,7 @@ function checkValidation(balance, amount){
             return false;
         }
     }else{
-        alert("Invalid amount");
+        alert("Invalid amount, Please provide valid amount number");
         return false;
     }
 }
@@ -51,7 +66,7 @@ function checkValidation(balance, amount){
 function reset(){
     noakhaliInput.value = "";
     feniInput.value = "";
-    quotaBtn.value = "";
+    quotaInput.value = "";
 }
 
 
@@ -60,12 +75,15 @@ function HistoryAdd(amount, text){
     const date = new Date();
     const formattedDate = date.toString();
     div.innerHTML = `
-    <div class="card bg-base-100 w-full shadow-xl">
+    <div class="card bg-base-100 w-full  sm:shadow-xl transition-all duration-300 hover:bg-blue-200 hover:scale-105">
         <div class="card-body">
         <p class="text-xl font-bold">${amount}${text}</p>
         <p class="text-sm  text-gray-500">Date : ${formattedDate}</p>
         
         </div>
+           <div class="divider sm:hidden p-0 m-0"></div>
+ 
+
     </div>
 
     `
@@ -89,44 +107,43 @@ function updateDonateBalance(id, amount){
     element.innerText = total;
 }
 
+function changeBtn1(id){
+    id.className = "relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium rounded-lg group bg-gradient-to-br from-green-400 to-blue-600  text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800";
+}
 
-blog_btn.addEventListener("click", (event)=>{
-    window.location.href = "./blog.html"
-    
-})
+function changeBtn2(id){
+    id.className = "relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-white-900 text-black hover:text-white rounded-md group-hover:bg-opacity-0";
+}
+
+function changeBtn3(id){
+    id.className = "relative px-5 py-2.5 transition-all ease-in duration-75  rounded-md group-hover:bg-opacity-0";
+}
+
 
 donate_btn.addEventListener("click", ()=>{
     history_section.className = "hidden";
-    card_section.className = "";
-
-
-    history_btn_2.className = "relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium rounded-lg group bg-gradient-to-br from-green-400 to-blue-600  text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"
-    history_btn.className = "relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-white-900 text-black hover:text-white rounded-md group-hover:bg-opacity-0"
-    
-    donate_btn_2.className ="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium rounded-lg group bg-gradient-to-br from-green-400 to-blue-600  text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800";
-
-    donate_btn.className = "relative px-5 py-2.5 transition-all ease-in duration-75  rounded-md group-hover:bg-opacity-0";
-
+    card_section.className = "space-y-8";
+    changeBtn1(history_btn_2);
+    changeBtn2(history_btn);
+    changeBtn1(donate_btn_2);
+    changeBtn3(donate_btn);
     footer.className = "";
+    faq_section.className = "hidden";
 })
+
+
+
 history_btn.addEventListener("click", ()=>{
     card_section.className = "hidden"
     history_section.className = "flex flex-col space-y-4";
-
-    donate_btn_2.className = "relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium rounded-lg group bg-gradient-to-br from-green-400 to-blue-600  text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"
-    donate_btn.className = "relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-white-900 text-black hover:text-white rounded-md group-hover:bg-opacity-0"
-    
-    history_btn_2.className ="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium rounded-lg group bg-gradient-to-br from-green-400 to-blue-600  text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800";
-
-    history_btn.className = "relative px-5 py-2.5 transition-all ease-in duration-75  rounded-md group-hover:bg-opacity-0";
-
-    footer.className = "fixed bottom-0 left-0 w-full";
-
-    
-
+    changeBtn1(donate_btn_2);
+    changeBtn2(donate_btn)
+    changeBtn1(history_btn_2);
+    changeBtn3(history_btn);
+    footer.className = "hidden";
+    faq_section.className = "hidden";
 })
-
-
+    
 
 
 noakhaliBtn.addEventListener("click", ()=>{
@@ -157,11 +174,33 @@ feniBtn.addEventListener("click", ()=>{
     if(flag){
         const newBalance = parseFloat(balanceValue) - parseFloat(amountValue);
         balance.innerText = newBalance;
-
         my_modal_1.showModal();
-        
-     }
+
+        updateDonateBalance("feni_balance", amountValue);
+        HistoryAdd(amountValue, " Taka is Donated for Flood Relief in Feni,Bangladesh");
+
+    }
 })
+
+quotaBtn.addEventListener("click", ()=>{
+
+    let amountValue = quotaInput.value;
+    let balanceValue = balance.innerText;
+    const flag = checkValidation(balanceValue, amountValue);
+ 
+    reset();
+    if(flag){
+        const newBalance = parseFloat(balanceValue) - parseFloat(amountValue);
+        balance.innerText = newBalance;
+        my_modal_1.showModal();
+
+        updateDonateBalance("quota_balance", amountValue);
+        HistoryAdd(amountValue, " Taka is Donated for Aid for Injured in the Quota Movement , Bangladesh");
+
+    }
+})
+
+        
 
 
 
